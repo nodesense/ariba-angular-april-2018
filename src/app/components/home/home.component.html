@@ -1,0 +1,45 @@
+<h2>Home</h2>
+
+<!-- {{expr}} interpolation
+  evaluate expression
+  convert result to string, display
+-->
+
+<p> Counter: {{counter}}</p>
+<p> Counter * 10: {{counter * 10}}</p>
+
+<button (click)="increment()">
+  +1
+</button>
+
+<!--  (eventName) - event binding
+  (click) syntatic sugar, angular converts to on-click -->
+
+<button on-click="decrement()">
+  -1
+</button>
+
+<button (click)="counter = counter + 2">
+  +2
+</button>
+
+
+<br />
+
+<!-- [property binding ] -->
+
+<input [value]="counter" />
+
+<input [value]="counter * 10" />
+
+<p> {{ counter % 2 == 0? "Even": "Odd" }} </p>
+
+<button [disabled]="counter % 2 == 0">
+  My button
+</button>
+
+<!-- non sugar part of property binding
+   [propName] to bind-propName
+
+-->
+<input bind-value="counter * 10" />
