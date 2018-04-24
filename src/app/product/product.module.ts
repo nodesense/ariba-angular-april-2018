@@ -1,3 +1,4 @@
+import { ProductService } from './services/product.service';
  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductHomeComponent } from './components/product-home/product-home.component';
@@ -47,6 +48,15 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [ProductHomeComponent, ProductListComponent, ProductEditComponent, ProductSearchComponent]
+  declarations: [
+                ProductHomeComponent, 
+                ProductListComponent, 
+                ProductEditComponent, 
+                ProductSearchComponent],
+
+  providers: [
+    // module level providers are singleton
+    ProductService
+  ]
 })
 export class ProductModule { }

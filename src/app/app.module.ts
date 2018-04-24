@@ -18,6 +18,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 // Step 1: map path to component
 import {RouterModule, Routes} from '@angular/router';
 
+// ng 4.3 onwards
+import {HttpClientModule} from '@angular/common/http';
+
 const routes: Routes = [
     {
         path: '', 
@@ -49,6 +52,8 @@ const routes: Routes = [
 
         // Apply routes to angular
         RouterModule.forRoot(routes),
+
+        HttpClientModule,
 
         SharedModule,
 
