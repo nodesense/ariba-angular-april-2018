@@ -15,14 +15,28 @@ interface Address {
 })
 export class ContactComponent implements OnInit {
 
-  address: Address = {
-    city: 'Bangalore',
-    state: 'Karnataka'
-  }
+  // address is undefined
+  address: Address;
+  
+  // address: Address = {
+  //   city: 'Bangalore',
+  //   state: 'Karnataka'
+  // }
+
+  
+  name: string = "Angular";
+
 
   constructor() { }
 
   ngOnInit() {
+       
+      setTimeout( () => {
+          console.log("Timeout ");
+          this.address = {city: 'Bangalore', 
+                          state: 'Karnataka', 
+                          pincode: 560000}
+      }, 3000);
   }
 
 }

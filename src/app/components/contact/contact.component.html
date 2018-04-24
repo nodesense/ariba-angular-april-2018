@@ -1,3 +1,33 @@
-<p>
-  contact works!
+<h2>Contact</h2>
+
+<!-- two way binding [()] -->
+
+<!-- ngModel from angular formsmodule-->
+<input [(ngModel)]="name" />
+
+<!-- same as above, non sugar part -->
+
+<p>Second input </p>
+<input [ngModel]="name" 
+       (ngModelChange)="name = $event"
+/>
+
+
+<p> You are typing {{name}}</p>
+
+
+
+<p *ngIf="address">Address {{address.city}}, 
+           {{address.state}},
+           {{address.pincode}} 
+</p>
+
+<!-- elvis operator ?.
+  ensure that address is not undefined or null
+  
+-->
+
+<p>Address {{address?.city}}, 
+    {{address?.state}},
+    {{address?.pincode}} 
 </p>

@@ -14,6 +14,7 @@ import {Component, OnInit} from "@angular/core";
 })
 export class AppComponent implements OnInit {
     title: string = "Product App"
+    today: Date = new Date();
 
     // called before loading view
     constructor() {

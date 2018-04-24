@@ -1,3 +1,10 @@
-<p>
-  footer works!
-</p>
+<div>
+  <hr />
+
+  <!-- from shared module -->
+  <app-address  [address]="address"
+                (contactEvent)="onContactAddress($event)"
+  ></app-address>
+
+  <p>Copyrights @ {{today.getFullYear()}}, {{title}}</p>
+</div>
