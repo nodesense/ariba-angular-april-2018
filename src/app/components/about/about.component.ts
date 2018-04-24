@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   members: string[] = ["Krish", "Venkat"];
-
   show: boolean = true;
-
+  
   constructor() { }
 
   ngOnInit() {

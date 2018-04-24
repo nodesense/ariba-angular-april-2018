@@ -2,11 +2,20 @@
 
 <h2>Members</h2>
 
+<!-- # reference variable -->
+
+<!-- #memberName is dom reference for input -->
+<input #memberName />
+
+<button (click)="memberName.focus()">
+  Focus
+</button>
+
 <button (click)="empty()">
   Empty
 </button>
 
-<button (click)="addMember('New Member')">
+<button (click)="addMember(memberName.value)">
    Add
 </button>
 
@@ -14,8 +23,17 @@
   {{ show? "Hide":"show" }}
 </button>
 
-<ul *ngIf="show == true">
+
+<!-- ng 4, we have else -->
+
+<ul *ngIf="show == true else elsePart">
   <li *ngFor="let name of members">
     {{name}}
   </li>
 </ul>
+
+
+
+<ng-template #elsePart>
+ <p>List is hidden</p>
+</ng-template>
