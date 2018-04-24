@@ -1,3 +1,4 @@
+import { ProductModule } from './product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
@@ -12,14 +13,47 @@ import { SharedModule } from './shared/shared.module';
 // + services
 
 import {FormsModule} from '@angular/forms';
- 
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+// Step 1: map path to component
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+    {
+        path: '', 
+        component: HomeComponent
+    },
+    {
+        path: 'about', //http://localhost:4200/about
+        component: AboutComponent
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
+    },
+    {
+        path: 'contact-us',
+        redirectTo: 'contact'
+    }, 
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
+]
+
 @NgModule({
     // module dependencies
     imports: [
         BrowserModule,
         FormsModule,
 
-        SharedModule
+        // Apply routes to angular
+        RouterModule.forRoot(routes),
+
+        SharedModule,
+
+        //TODO: Lazy Load
+        ProductModule
     ],
 
     declarations: [
@@ -29,6 +63,7 @@ import {FormsModule} from '@angular/forms';
         HomeComponent,
         AboutComponent,
         ContactComponent,
+        NotFoundComponent,
 
         //HeaderComponent,
         //FooterComponent,

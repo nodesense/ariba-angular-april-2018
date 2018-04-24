@@ -43,3 +43,17 @@
 
 -->
 <input bind-value="counter * 10" />
+
+
+<p>Two way binding {{homeLikes}} </p>
+<!-- 
+<app-like [(likes)]="homeLikes">
+
+</app-like> -->
+
+
+<app-like [likes]="homeLikes"
+          (likesChange)="homeLikes = $event"
+>  
+
+  </app-like>

@@ -1,5 +1,16 @@
 <div>
   <h1>{{title}}</h1>
+ 
+  <a routerLink="/" class="button" 
+    routerLinkActive="success"
+    [routerLinkActiveOptions]="{exact: true}"
+    > Home </a>
+
+  <a routerLink="/products"  class="button" routerLinkActive="success"> Products </a>
+
+  <a routerLink="/about"  class="button" routerLinkActive="success"> About </a>
+
+  <a routerLink="/contact"  class="button" routerLinkActive="success"> Contact </a>
 
   <hr />
 </div>
