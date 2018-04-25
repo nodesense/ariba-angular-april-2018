@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule}
                           from '@angular/forms';
 
 import {Routes, RouterModule} from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
 
     RouterModule.forChild(routes)
   ],

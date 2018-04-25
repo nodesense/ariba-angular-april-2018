@@ -1,5 +1,9 @@
+import { environment } 
+    from './../../../environments/environment';
 import { Address } from './../../shared/models/address';
 import { Component, OnInit, Input } from '@angular/core';
+
+console.log(environment)
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +11,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+
+  buildName: string = environment.buildName;
 
   @Input()
   title: string;

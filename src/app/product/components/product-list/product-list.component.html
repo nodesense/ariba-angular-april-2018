@@ -1,5 +1,30 @@
 <h2>Product List</h2>
 
+<form>
+  <label>Field</label>
+  <select name="field" [(ngModel)]="selectedField">
+    <option [value]="fieldName" 
+            *ngFor="let fieldName of fields" >
+        {{fieldName}}
+    </option>
+  </select>
+
+  <label>Predicate</label>
+  <select name="predicate" [(ngModel)]="selectedPredicate">
+    <option [value]="predicate" 
+            *ngFor="let predicate of predicates" >
+        {{predicate}}
+    </option>
+  </select>
+
+  <label>Value</label>
+  <input name="expected" [(ngModel)]="expectedValue" type="number" />
+</form>
+
+<div>
+  <p>Condition: {{selectedField}} {{selectedPredicate}} {{expectedValue}}</p>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -11,9 +36,14 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
+    <tr *ngFor="let product of (products | filter:selectedField:selectedPredicate:expectedValue)">
+      <td>
+          <a [routerLink]="['/products', 'edit', product.id]">
+          {{product.name | uppercase}}
+        </a>
+      
+      </td>
+      <td>{{product.price | currency:'INR':false}}</td>
       <td>{{product.year}}</td>
       <td>{{product.weight}}</td>
     </tr>

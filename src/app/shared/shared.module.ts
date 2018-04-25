@@ -23,7 +23,12 @@ import { AnimateDirective } from './directives/animate.directive';
 
   exports: [
     AddressComponent,
-    LikeComponent
+    LikeComponent,
+    PowerPipe, 
+    FilterPipe, 
+    SortPipe, 
+    HighlightDirective, 
+    AnimateDirective
   ]
 })
 export class SharedModule { }
