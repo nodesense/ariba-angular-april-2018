@@ -16,7 +16,9 @@ import { CanEditGuard } from './guards/can-edit.guard';
 
 const routes: Routes = [
   {
-    path: 'products',
+    // for lazy loading
+    //path: 'products',
+    path: '',
     component: ProductHomeComponent,
 
     // nested navigation

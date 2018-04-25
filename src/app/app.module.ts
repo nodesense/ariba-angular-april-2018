@@ -1,5 +1,5 @@
 import { AuthModule } from './auth/auth.module';
-import { ProductModule } from './product/product.module';
+// import { ProductModule } from './product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
@@ -39,6 +39,12 @@ const routes: Routes = [
         path: 'contact-us',
         redirectTo: 'contact'
     }, 
+
+    {
+        path: 'products',
+        loadChildren: 'app/product/product.module#ProductModule'
+    },
+
     {
         path: '**',
         component: NotFoundComponent
@@ -59,7 +65,7 @@ const routes: Routes = [
         SharedModule,
 
         //TODO: Lazy Load
-        ProductModule,
+       // ProductModule,
 
         AuthModule
     ],
