@@ -10,8 +10,18 @@
          
          required
          minlength="2"
+
+         #productName="ngModel"
          
          />
+
+  <p *ngIf="productName.invalid">
+    Invalid Product Name
+  </p>
+
+  <pre>
+      {{productName.errors | json }}
+  </pre>       
 
 <label>
   Price

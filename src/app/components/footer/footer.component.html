@@ -1,5 +1,10 @@
-<div>
+<div appHighlight #myDirective="appHighlight">
   <hr />
+ 
+  <p> color {{myDirective.color}} </p>
+  <button (click)="myDirective.setColor('green')">
+    Set Color
+  </button>
 
   <!-- from shared module -->
   <app-address  [address]="address"

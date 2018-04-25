@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth/guards/auth.guard';
 import { ProductService } from './services/product.service';
  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,7 @@ import {FormsModule, ReactiveFormsModule}
 
 import {Routes, RouterModule} from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { CanEditGuard } from './guards/can-edit.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +23,8 @@ const routes: Routes = [
     children: [
       {
         path: 'list',  // http://localhost:4200/products/list
-        component: ProductListComponent
+        component: ProductListComponent,
+        canActivate: [AuthGuard]
       },
 
       {
@@ -30,7 +33,8 @@ const routes: Routes = [
       },
       {
         path: 'edit/:id', // products/edit/1234466
-        component: ProductEditComponent
+        component: ProductEditComponent,
+        canActivate: [CanEditGuard]
       },
 
       {
@@ -58,7 +62,8 @@ const routes: Routes = [
 
   providers: [
     // module level providers are singleton
-    ProductService
+    ProductService,
+    CanEditGuard
   ]
 })
 export class ProductModule { }

@@ -36,7 +36,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let product of (products | filter:selectedField:selectedPredicate:expectedValue)">
+    <tr   *ngFor="let product of (products | filter:selectedField:selectedPredicate:expectedValue)">
       <td>
           <a [routerLink]="['/products', 'edit', product.id]">
           {{product.name | uppercase}}

@@ -5,7 +5,7 @@
 <!-- # reference variable -->
 
 <!-- #memberName is dom reference for input -->
-<input #memberName />
+<input #memberName  appHighlight color="purple"/>
 
 <button (click)="memberName.focus()">
   Focus
@@ -26,7 +26,7 @@
 
 <!-- ng 4, we have else -->
 
-<ul *ngIf="show == true else elsePart">
+<ul   appHighlight  color="lightblue"  *ngIf="show == true else elsePart">
   <li *ngFor="let name of members">
     {{name}}
   </li>

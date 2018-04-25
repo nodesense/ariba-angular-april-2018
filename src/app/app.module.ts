@@ -1,3 +1,4 @@
+import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from "@angular/core";
@@ -58,7 +59,9 @@ const routes: Routes = [
         SharedModule,
 
         //TODO: Lazy Load
-        ProductModule
+        ProductModule,
+
+        AuthModule
     ],
 
     declarations: [
